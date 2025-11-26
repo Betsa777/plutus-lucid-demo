@@ -43,6 +43,7 @@ compareBtn.addEventListener("click", async function () {
   console.log("datum is", datum);
 
   //Verify if pubkeyHash in the datum matches the signer pubkeyHash
+  // Redeemer value will be compared to any of your previous datum
   const demoDatum = new Constr(0, [signerPubKeyHash, BigInt(datumValue)]);
   const demoRedeemer = new Constr(1, [BigInt(redeemerValue)]);
   const tx = await lucid
