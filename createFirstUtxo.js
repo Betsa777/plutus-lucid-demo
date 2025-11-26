@@ -31,7 +31,9 @@ createUtxoButton.addEventListener("click", async function () {
     const txhash = await signedTx.submit();
     console.log("Tx hash is ", txhash);
     document.getElementById("hash").innerHTML =
-      `https://preprod.cardanoscan.io/transaction/txhash`;
+      `<a href="https://preprod.cardanoscan.io/transaction/${txhash}"
+            Transaction on preprod
+         </a>`;
   } catch (err) {
     console.log(err);
   }
