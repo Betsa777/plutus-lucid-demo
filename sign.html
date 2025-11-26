@@ -5,52 +5,75 @@
         <title>Verify Signature</title>
 
         <style>
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: Arial, sans-serif;
-                background: #f4f4f4;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
+            :root {
+                --bg: #0f1724;
+                --card: #0b1220;
+                --accent: #7c3aed;
+                --muted: #94a3b8;
             }
 
-            .container {
-                background: white;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                width: 320px;
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                display: grid;
+                place-items: center;
+                font-family: Inter, ui-sans-serif, system-ui;
+                background: linear-gradient(180deg, #071028 0%, #0b1220 60%);
+                color: #e6eef8;
+            }
+
+            .card {
+                width: min(420px, 90%);
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 12px;
+                padding: 28px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
                 text-align: center;
             }
 
             h1 {
-                margin-bottom: 20px;
+                margin: 0 0 18px;
                 font-size: 22px;
-                color: #333;
             }
 
             button {
                 width: 100%;
                 padding: 12px;
-                font-size: 16px;
-                background: #4a90e2;
-                color: white;
                 border: none;
-                border-radius: 6px;
+                border-radius: 10px;
+                font-weight: 600;
                 cursor: pointer;
-                transition: 0.2s;
+                font-size: 15px;
+                background: linear-gradient(90deg, var(--accent), #5b21b6);
+                color: white;
+                box-shadow: 0 6px 18px rgba(124, 58, 237, 0.18);
             }
 
             button:hover {
-                background: #3578c9;
+                opacity: 0.9;
+            }
+
+            a.back {
+                display: inline-block;
+                margin-top: 18px;
+                color: var(--muted);
+                text-decoration: none;
+                font-size: 14px;
+            }
+
+            a.back:hover {
+                color: white;
             }
         </style>
     </head>
 
     <body>
-        <div class="container">
+        <div class="card">
             <h1>Signature</h1>
 
             <button id="signBtn">Sign</button>
