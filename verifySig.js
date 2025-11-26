@@ -18,7 +18,8 @@ signButton.addEventListener("click", async function () {
   const scriptUxtos = await lucid.utxosAt(validatorAddress);
   console.log({ scriptUxtos });
   console.log({ signerPubKeyHash });
-  const goodScriptUtxo = scriptUxtos.find((utxo) => {
+  let goodScriptUtxo = [];
+  goodScriptUtxo = scriptUxtos.find((utxo) => {
     if (utxo.datum !== undefined) {
       // console.log("utxo is", utxo);
       const datum = Data.from(utxo.datum);
@@ -26,13 +27,13 @@ signButton.addEventListener("click", async function () {
         const pkh = datum.fields[0];
         // console.log("datum de 0", datum.fields[0]);
         if (pkh == signerPubKeyHash) return utxo;
-        else {
-          alert("create a Utxo first");
-          return;
-        }
       }
     }
   });
+  if (goodScriptUtxo.length == 0) {
+    alert("You must create a UTXO first");
+    return;
+  }
   console.log("decoded datum is", goodScriptUtxo);
   const datum = Data.from(goodScriptUtxo.datum);
 
