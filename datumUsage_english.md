@@ -151,7 +151,7 @@ const tx = await lucid
 | Create a datum            | `payToContract` stores the datum in a UTxO                  |
 | Identify the correct UTxO | `goodScriptUtxo = utxosAt(...).find(...)`                   |
 | Read/use the datum        | `collectFrom([goodScriptUtxo], redeemer)` consumes the UTxO |
-                               that contains the good datum
+|                           |  that contains the good datum                               |
 | Execute the validator     | `datum + redeemer + txInfo` available in the script         |
 | Update state              | New UTxO with new datum if needed                           |
 
