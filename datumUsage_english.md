@@ -5,7 +5,7 @@
 On Cardano, **a datum is never passed directly to the script**.
 It must be **stored in a UTxO**, and the script can only read it **when that UTxO is consumed**.
 
-The `DatRed` smart contract perfectly illustrates this model.
+The `DatRed` smart contract perfectly illustrates this model:
 <a href="https://github.com/Betsa777/plutus-lucid-demo/blob/main/DatRed.hs">DatRed.hs</a>
 
 ---
